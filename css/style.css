@@ -589,8 +589,7 @@ body {
 }
 
 .btt i:hover {
-  color: var(--black);
-  background-color: var(--gray);
+  opacity: 0.8;
 }
 
 @keyframes back_to_top {
