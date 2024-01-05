@@ -11,7 +11,8 @@ Table Of Content
 4. Services CSS Start
 5. Gallery CSS Start
 6. Contact CSS Start
-7. Footer CSS Start
+7. BTT CSS Start
+8. Footer CSS Start
 */
 
 :root {
@@ -561,6 +562,55 @@ body {
   opacity: 0.8;
 }
 /* Contact CSS End */
+
+.btt {
+  position: fixed;
+  bottom: 32px;
+  right: 24px;
+  z-index: 33;
+}
+
+.btt i {
+  height: 44px;
+  width: 44px;
+  line-height: 44px;
+  text-align: center;
+  font-size: 20px;
+  color: var(--secondary);
+  background-color: var(--primary);
+  border-radius: var(--radius-round);
+  -webkit-border-radius: var(--radius-round);
+  -moz-border-radius: var(--radius-round);
+  -ms-border-radius: var(--radius-round);
+  -o-border-radius: var(--radius-round);
+  cursor: pointer;
+  animation: back_to_top linear 0.8s 3;
+  -webkit-animation: back_to_top linear 0.8s 3;
+}
+
+.btt i:hover {
+  color: var(--black);
+  background-color: var(--gray);
+}
+
+@keyframes back_to_top {
+  0% {
+    transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    -moz-transform: scale(0.4);
+    -ms-transform: scale(0.4);
+    -o-transform: scale(0.4);
+  }
+
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+}
+/* BTT CSS End */
 
 footer .top {
   padding: 40px 0;

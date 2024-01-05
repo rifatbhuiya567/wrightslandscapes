@@ -1,4 +1,10 @@
 (function () {
+  const btt = document.querySelector(".btt i");
+
+  window.onload = () => {
+    btt.style.display = "none";
+  };
+
   window.onscroll = () => {
     const sections = document.querySelectorAll(".webpage-section");
     const scrollPos =
@@ -15,7 +21,24 @@
           .querySelector(`a[href*=${id}]`)
           .parentNode.classList.add("active");
       }
-    navbarScroll();
+
+    if (
+      document.body.scrollTop > 80 ||
+      document.documentElement.scrollTop > 80
+    ) {
+      document.querySelector(".navbar").classList.add("scrolled");
+    } else {
+      document.querySelector(".navbar").classList.remove("scrolled");
+    }
+
+    if (
+      document.body.scrollTop > 200 ||
+      document.documentElement.scrollTop > 200
+    ) {
+      btt.style.display = "block";
+    } else {
+      btt.style.display = "none";
+    }
   };
 
   const navLinks = document.querySelectorAll(".nav-link");
@@ -31,19 +54,8 @@
     }
   }
 
-  const navbarScroll = () => {
-    if (
-      document.body.scrollTop > 80 ||
-      document.documentElement.scrollTop > 80
-    ) {
-      document.querySelector(".navbar").classList.add("scrolled");
-    } else {
-      document.querySelector(".navbar").classList.remove("scrolled");
-    }
-  };
-
   function mainSlider() {
-    var myBannerSlider = $(".banner-slide");
+    const myBannerSlider = $(".banner-slide");
     myBannerSlider.on("init", function (e, slick) {
       var $firstAnimatingElements = $(".banner-content:first-child").find(
         "[data-animation]"
@@ -89,7 +101,12 @@
   }
   mainSlider();
 
-  let galleryTop = $(".gallery-top");
+  btt.addEventListener("click", () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+
+  const galleryTop = $(".gallery-top");
 
   galleryTop.slick({
     autoplay: true,
@@ -119,7 +136,7 @@
     ],
   });
 
-  let galleryBottom = $(".gallery-bottom");
+  const galleryBottom = $(".gallery-bottom");
 
   galleryBottom.slick({
     autoplay: true,
